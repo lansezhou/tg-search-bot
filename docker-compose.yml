@@ -3,8 +3,6 @@ services:
   cache:
     image: redis:alpine
     restart: unless-stopped
-    # use this and edit REDIS_PASSWORD if you want to set a password for redis
-    # command: "redis-server --requirepass ${REDIS_PASSWORD}"
     command: "redis-server"
     ports:
       - "6379:6379"
@@ -12,7 +10,7 @@ services:
       - ~/.tg_search_bot/redis/data:/data
 
   tg_search_bot:
-    image: python:3.10
+    build: .
     restart: always
     working_dir: /app
     environment:
@@ -23,7 +21,3 @@ services:
       - ~/.tg_search_bot:/root/.tg_search_bot
     depends_on:
       - cache
-    command: >
-      sh -c "
-      pip3 install -U -r requirements.txt && 
-      python3 bot.py"
