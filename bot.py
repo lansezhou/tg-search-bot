@@ -107,15 +107,15 @@ VGLE_UTIL = jv.AvgleUtil(BOT_CFG.proxy_addr)
 EXECUTOR = concurrent.futures.ThreadPoolExecutor()
 ID_PAT = re.compile(r"[a-z0-9]+[-_](?:ppv-)?[a-z0-9]+")
 BOT_CMDS = {
-    "help": "View command help",
-    "stars": "View my actors",
-    "ids": "View my ids",
-    "nice": "Randomly get a high-rated film",
-    "new": "Randomly get a latest film",
-    "rank": "Get DMM actor rankings",
-    "record": "Get saved records file",
-    "star": "Followed by the actor's name for searching the actor",
-    "id": "Followed by the id for searching the id",
+    "help": "查看命令帮助",
+    "stars": "查看我的演员",
+    "ids": "查看我的番号",
+    "nice": "随机获取高评分影片",
+    "new": "随机获取最新影片",
+    "rank": "获取DMM演员排行榜",
+    "record": "获取已保存记录文件",
+    "star": "按演员名字搜索演员",
+    "id": "按番号搜索影片",
 }
 MSG_HELP = f"""Just send me the movie title, keywords, or id, and I'll take care of the rest!
 
